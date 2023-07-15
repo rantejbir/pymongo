@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>{{t}}</title>
+    <!-- href="/static/assets/style.css"-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='assets/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='assets/emoji.css')}}"
+    />
+    <script src="{{ url_for('static',filename='assets/twemoji.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/emoji.js')}}"></script>
+  </head>
+  <body>
+    <form action="/action" method="POST">
+      <table class="none">
+        <tr class="row success">
+          <td>
+            <h2>Add a Person</h2>
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <input type="text" name="name" placeholder="name" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-4">
+            <textarea
+              name="desc"
+              rows="2"
+              cols="30"
+              placeholder="Enter Description here..."
+              required
+            ></textarea>
+          </td>
+        </tr>
+
+        <tr class="row">
+          <td class="col-2">
+            <select name="gender">
+              <option selected disabled>gender</option>
+              <option>male</option>
+              <option>female</option>
+              <option>Prefer not to say!</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <button type="submit">Add</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script></script>
+  </section>
+  <section>
+    <form action="/action2" method="POST">
+      <table class="none">
+        <tr class="row success">
+          <td>
+            <h2>Add a Job</h2>
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <input type="text" name="name" placeholder="Job" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <input type="text" name="Company" placeholder="Company" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <input type="text" name="Manager" placeholder="Manager" />
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-4">
+            <textarea
+              name="desc"
+              rows="2"
+              cols="30"
+              placeholder="Enter Description here..."
+              required
+            ></textarea>
+          </td>
+        </tr>
+
+        <tr class="row">
+          <td class="col-2">
+            <select name="demand">
+              <option selected disabled>Demand</option>
+              <option>High</option>
+              <option>Low</option>
+              <option>no use</option>
+            </select>
+          </td>
+        </tr>
+        <tr class="row">
+          <td class="col-2">
+            <button type="submit">Add</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script></script>
+  </section>
+  </body>
+</html>

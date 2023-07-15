@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title>{{t}}</title>
+    <!-- href="/static/assets/style.css"-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='assets/style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='assets/emoji.css')}}"
+    />
+    <script src="{{ url_for('static',filename='assets/twemoji.min.js')}}"></script>
+    <script src="{{ url_for('static',filename='assets/emoji.js')}}"></script>
+  </head>
+  <body>
+    <section>
+      <h1>PEOPLE</h1>
+      
+      {% if error %}
+      <div class="alert alert-danger"><strong>Error!</strong> {{ error }}</div>
+      {% endif %}
+      <hr />
+      {% if todos[0] %}
+      <div span="right"></div>
+      
+      <table>
+        <tr id="row">
+          <th class="name">Name</th>
+          <th class="desc">Description</th>
+          <th class="Gender">Gender</th>
+          <th class="func1">Remove</th>
+          <th class="func2">Modify</th>
+        </tr>
+        {% for todo in todos %}
+        <tr class="datas">
+          <td class="name">{{ todo["name"] }}</td>
+          <td class="desc">{{ todo["desc"] }}</td>
+          <td class="gender">{{ todo["gender"] }}</td>
+          <td class="func1"><a href="./remove?_id={{ todo['_id'] }}">🗑️</a></td>
+          <td class="func2"><a href="./update?_id={{ todo['_id'] }}">📝</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      {% else %}
+      <div class="danger">
+        <h4></h4>
+      </div>
+      {% endif %}
+      <hr />
+      <section>
+        <br><br> 
+        <h1>JOBS</h1>
+
+        {% if error %}
+        <div class="alert alert-danger">
+          <strong>Error!</strong> {{ error }}
+        </div>
+        {% endif %}
+        <hr />
+        {% if todos2[0] %}
+        <div span="right"></div>
+        
+        <table>
+          <tr id="row">
+            <th class="name">Job Name</th>
+            <th class="Company">Company</th>
+            <th class="Manager">Manager</th>
+            <th class="desc">Description</th>
+            <th class="demand">Demand</th>
+            <th class="func1">Delete</th>
+            <th class="func2">Modify</th>
+          </tr>
+          {% for todo in todos2 %}
+          <tr class="datas">
+            <td class="name">{{ todo["Job"] }}</td>
+            <td class="Company">{{ todo["Company"] }}</td>
+            <td class="Manager">{{ todo["Manager"] }}</td>
+            <td class="desc">{{ todo["desc"] }}</td>
+
+            <td class="demand">{{ todo["demand"] }}</td>
+            <td class="func1">
+              <a href="./remove?_id={{ todo['_id'] }}">🗑️</a>
+            </td>
+            <td class="func2">
+              <a href="./update2?_id={{ todo['_id'] }}">📝</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+        <div class="danger">
+          <h4></h4>
+        </div>
+        {% endif %}
+        <hr />
+      </section><br><br><br>
+      <a href="./page2">ADD something</a>
+  </body>
+</html>
