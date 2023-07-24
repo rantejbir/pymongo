@@ -1,127 +1,326 @@
-h1{
-/*	font-family:"Arial Black", Gadget, sans-serif;*/
-	font-family:"Times New Romans", Gadget, sans-serif;
-}
-body{
-	color:black;
-	background-color:white;
-	left-margin:10px;
-	right-margin:10px;
-}
-table{
-	width:95%;
-	border-collapse:collapse;
-	table-layout:fixed;
-}
-td
-{
-	border: rgba(224, 119, 70, 1) 1px solid;
-	word-wrap:break-word;
-}
-table#close{
-
-	table-layout:default;
-	border-collapse:seperate;
-	border-spacing: 5px 5px;
-	border:none;
-	vertical-align:top;
-}
-table.none
-{
-	border:none;
-	vertical-align:top;
-}
-table.none td
-{
-	border: none;
-}
-tr.row td{
-	text-decoration:italic;
-}
-th.status{
-	width:5%;
-}
-th.name{
-	width:20%;
-}
-th.des{
-	width:40%;
-	padding:5px 5px 5px 5px;
-}
-th.date{
-	width:8%;
-}
-th.pr{
-	width:7%;
-}
-th.func1{
-	width:6%;
-}
-th.func2{
-	width:5%;
-}
-td.date, td.pr, td.func1, td.func2 {
-	text-align: center;
+/* Reset some default styles to have a clean slate */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
 }
 
-/* Grid CSS */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-  margin: 1.2em;
-}
-.col-1 { width: 8.33%; }
-.col-2 { width: 16.66%; }
-.col-3 { width: 25%; }
-.col-4 { width: 33.33%; }
-.col-5 { width: 41.66%; }
-.col-6 { width: 50%; }
-.col-7 { width: 58.33%; }
-.col-8 { width: 66.66%; }
-.col-9 { width: 75%; }
-.col-10 { width: 83.33%; }
-.col-11 { width: 91.66%; }
-.col-12 { width: 100%; }
-
-button[type=submit] {
-	background-color: #428bca;
-	border: none;
-	color: white;
-	border-radius: 15px 15px;
-	padding: 10px 20px;
-	text-decoration: none;
-	margin: 4px 2px;
-	cursor: pointer;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
 }
 
-.success { color: #5cb85c; }
-.danger { color: #d9534f; }
-.warning { color: #ff9800; }
-.info { color: #2196F3; }
+/* Header Section */
+h1 {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #3498db;
+  color: #fff;
+}
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
-li {
-    float: left;
+
+th, td {
+  padding: 10px;
+  text-align: left;
 }
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+
+th {
+  background-color: #3498db;
+  color: #fff;
 }
-a.active {
-    background-color: #4CAF50;
+
+tr.datas:nth-child(odd) {
+  background-color: #f2f2f2;
 }
-/* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+
+tr.datas:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.func1 a, .func2 a {
+  padding: 5px;
+  border: 1px solid #3498db;
+  border-radius: 3px;
+}
+
+.func1 a:hover, .func2 a:hover {
+  background-color: #3498db;
+  color: #fff;
+}
+
+/* Alert Messages */
+.alert {
+  padding: 10px;
+  background-color: #f44336;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Centering Elements */
+section {
+  text-align: center;
+}
+
+/* Spacing */
+section {
+  margin-bottom: 40px;
+}
+
+/* Additional Styling */
+.danger h4 {
+  text-align: center;
+  color: #f44336;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  /* Adjust table layout for smaller screens */
+  table {
+    font-size: 14px;
+  }
+}
+/* Reset some default styles to have a clean slate */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, form {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+}
+
+/* Centering Elements */
+section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Form Styling */
+form {
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+  margin-bottom: 10px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+td {
+  padding: 10px;
+}
+
+/* Input and Textarea Styling */
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Select Styling */
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+/* Success Message */
+.row.success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  /* Adjust table layout for smaller screens */
+  table {
+    font-size: 14px;
+  }
+  /* Center the form on smaller screens */
+  form {
+    max-width: 300px;
+  }
+}
+/* Dropdown Styling */
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  appearance: none; /* Remove default arrow icon on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Styling the custom arrow icon for the dropdown */
+select::-ms-expand {
+  display: none; /* Hide default arrow icon in IE 10 and IE 11 */
+}
+
+/* Styling the custom arrow icon for the dropdown in Chrome, Edge, and Safari */
+select::after {
+  content: '\25BC'; /* Unicode character for a downward-pointing triangle */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none; /* Prevent the arrow from being clickable */
+}
+
+/* Hover and focus styles for the dropdown */
+select:hover, select:focus {
+  border-color: #3498db;
+}
+
+/* Style the options within the dropdown */
+select option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Additional Styling */
+h1 {
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: white;
+}
+
+hr {
+  margin-bottom: 20px;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+  margin-bottom: 10px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  appearance: none; /* Remove default arrow icon on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Styling the custom arrow icon for the dropdown */
+form select::-ms-expand {
+  display: none; /* Hide default arrow icon in IE 10 and IE 11 */
+}
+
+form select::after {
+  content: '\25BC'; /* Unicode character for a downward-pointing triangle */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 12px;
+  pointer-events: none; /* Prevent the arrow from being clickable */
+}
+
+form button[type="submit"] {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+form button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+
+/* Top alignment for labels and form elements */
+form .top {
+  vertical-align: top;
+}
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+
+  margin: 0;
+  padding: 0;
 }
 

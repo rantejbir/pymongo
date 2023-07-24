@@ -7,8 +7,8 @@ import os
 mongodb_host = os.environ.get('MONGO_HOST', 'localhost')
 mongodb_port = int(os.environ.get('MONGO_PORT', '27017'))
 client = MongoClient(mongodb_host, mongodb_port)    #Configure the connection to the database
-db = client.camp2016    #Select the database
-allList = db.todo #Select the collection
+db = client.Main    #Select the database
+allList = db.names #Select the collection
 
 app = Flask(__name__)
 
